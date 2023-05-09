@@ -45,3 +45,4 @@ const response = await fetch(
     "https://open-meteo.com/en/docs#latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_hours&timezone=" + timezone
     );
 const data = await response.json();
+const dayMessage = days === 1 ? "today" : days === 1 ? "tomorrow" : 'in ' + days + ' days';
