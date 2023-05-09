@@ -38,7 +38,11 @@ if (args.e) {
     console.log("Longitude must be in range.");
 }
 
-const days = Math.max(0, Math.min(args.d || 1, 6));
+const days = args.d ?? 1;
+if (days < 0 || days > 6) {
+    console.log("Day must be between 0 and 6.");
+    process.exit(1);
+  }
 
 const response = await fetch(
     "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_hours&timezone=" + timezone
