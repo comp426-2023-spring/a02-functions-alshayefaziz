@@ -27,7 +27,7 @@ if (args.n) {
 } else if (args.s) {
     lat = -args.s;
 } else {
-    console.log("Latitude must be specified");
+    console.log("Latitude must be in range");
 }
 
 if (args.e) {
@@ -35,7 +35,7 @@ if (args.e) {
 } else if (args.w) {
     long = -args.w;
 } else {
-    console.log("Longitude must be specified.");
+    console.log("Longitude must be in range.");
 }
 
 const days = Math.max(0, Math.min(args.d || 1, 6));
@@ -44,7 +44,7 @@ const response = await fetch(
     "https://api.open-meteo.com/v1/forecast?latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_hours&timezone=" + timezone
     );
 const data = await response.json();
-const dayMessage = days === 0 ? "today" : days === 1 ? "tomorrow" : 'in ' + days + ' days';
+const dayMessage = days === 0 ? "today" : days === 1 ? "tomorrow" : 'in ' + days + ' days.';
 
 if (data.daily.precipitation_hours[days] !== 0) {
     console.log('You might need your galoshes ' + dayMessage + '.');
