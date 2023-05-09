@@ -1,5 +1,9 @@
 #!/usr/bin/env node
 
+import minimist from "minimist";
+import moment from "moment-timezone";
+import fetch from "node-fetch";
+
 if(args.h){
     console.log(`Usage: galosh.js [options] -[n|s] LATITUDE -[e|w] LONGITUDE -z TIME_ZONE
     -h            Show this help message and exit.
