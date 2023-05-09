@@ -4,6 +4,7 @@ import minimist from "minimist";
 import moment from "moment-timezone";
 import fetch from "node-fetch";
 
+async function main() {
 const args = minimist(process.argv.slice(2))
 
 if(args.h){
@@ -55,3 +56,9 @@ if (args.j) {
     console.log(data);
     process.exit(0);
 }
+}
+
+main().catch((error) => {
+console.error(error);
+process.exit(1);
+});
