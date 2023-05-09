@@ -52,5 +52,6 @@ if (data.daily.precipitation_hours[days] !== 0) {
 }
 
 if (args.j) {
-    console.log(JSON.stringify(data, null, 2));
+    console.log(data);
+    process.exit(0);
 }
