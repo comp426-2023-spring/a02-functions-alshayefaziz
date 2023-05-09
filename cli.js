@@ -38,3 +38,10 @@ if (args.e) {
     console.log("Longitude must be specified.");
     return;
 }
+
+const days = Math.max(0, Math.min(args.d || 1, 6));
+
+const response = await fetch(
+    "https://open-meteo.com/en/docs#latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_hours&timezone=" + timezone
+    );
+const data = await response.json();
