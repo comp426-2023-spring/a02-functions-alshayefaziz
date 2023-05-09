@@ -17,7 +17,7 @@ if(args.h){
     process.exit(0);
 }
 
-const timezone = args.z || moment.tz.guess();
+let timezone = args.z || moment.tz.guess();
 let lat = 0;
 let long = 0;
 
