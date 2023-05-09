@@ -27,7 +27,6 @@ if (args.n) {
     lat = -args.s;
 } else {
     console.log("Latitude must be specified");
-    return;
 }
 
 if (args.e) {
@@ -36,7 +35,6 @@ if (args.e) {
     long = -args.w;
 } else {
     console.log("Longitude must be specified.");
-    return;
 }
 
 const days = Math.max(0, Math.min(args.d || 1, 6));
