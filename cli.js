@@ -46,3 +46,9 @@ const response = await fetch(
     );
 const data = await response.json();
 const dayMessage = days === 1 ? "today" : days === 1 ? "tomorrow" : 'in ' + days + ' days';
+
+if (data.daily.precipitation_hours[days] !== 0) {
+    console.log('You might need your galoshes ' + dayMessage + '.');
+} else {
+    console.log('You will not need your galoshes ' + dayMessage + '.');
+}
