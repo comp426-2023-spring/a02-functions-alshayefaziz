@@ -26,7 +26,7 @@ if (args.n) {
 } else if (args.s) {
     lat = -args.s;
 } else {
-    console.log("Latitube must be specified");
+    console.log("Latitude must be specified");
     return;
 }
 
