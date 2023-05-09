@@ -43,7 +43,7 @@ const response = await fetch(
     "https://open-meteo.com/en/docs#latitude=" + lat + "&longitude=" + long + "&hourly=temperature_2m,precipitation&daily=temperature_2m_max,temperature_2m_min,precipitation_hours&timezone=" + timezone
     );
 const data = await response.json();
-const dayMessage = days === 1 ? "today" : days === 0 ? "tomorrow" : 'in ' + days + ' days';
+const dayMessage = days === 0 ? "today" : days === 1 ? "tomorrow" : 'in ' + days + ' days';
 
 if (data.daily.precipitation_hours[days] !== 0) {
     console.log('You might need your galoshes ' + dayMessage + '.');
