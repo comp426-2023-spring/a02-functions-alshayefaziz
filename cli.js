@@ -52,3 +52,7 @@ if (data.daily.precipitation_hours[days] !== 0) {
 } else {
     console.log('You will not need your galoshes ' + dayMessage + '.');
 }
+
+if (args.j) {
+    console.log(JSON.stringify(data, null, 2));
+}
